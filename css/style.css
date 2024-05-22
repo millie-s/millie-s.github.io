@@ -20,6 +20,7 @@ h1,h2,h3,h4,h5,h6,p,ul,ol,li,dl,dt,dd,form,figure,form,select,input,textarea {ma
 ul {list-style-type: none;}
 ol {padding-left: 40px;padding-bottom: 15px;}
 img {border: none;max-width: 100%;height: auto;vertical-align: middle;}
+video{max-width: 100%;}
 img2 {border: none;}
 table {border-collapse:collapse;font-size: 100%;border-spacing: 0;}
 iframe {width: 100%;}
