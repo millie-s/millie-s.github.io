@@ -10,27 +10,34 @@ body {
 	margin: 0px;
 	padding: 0px;
 	-webkit-text-size-adjust: none;
-	color: #999;	/*全体の文字色*/
+	color: #696969;	/*全体の文字色*/
 	font-family: "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, Osaka, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;	/*フォント種類*/
 	font-size: 16px;	/*文字サイズ*/
 	line-height: 2;		/*行間*/
 	background: #fff;	/*背景色*/
 }
-h1,h2,h3,h4,h5,p,ul,ol,li,dl,dt,dd,form,figure,form,select,input,textarea {margin: 0px;padding: 0px;font-size: 100%;font-weight: normal;}
+h1,h2,h3,h4,h5,h6,p,ul,ol,li,dl,dt,dd,form,figure,form,select,input,textarea {margin: 0px;padding: 0px;font-size: 100%;font-weight: normal;}
 ul {list-style-type: none;}
 ol {padding-left: 40px;padding-bottom: 15px;}
 img {border: none;max-width: 100%;height: auto;vertical-align: middle;}
+img2 {border: none;}
 table {border-collapse:collapse;font-size: 100%;border-spacing: 0;}
 iframe {width: 100%;}
-
+h5 {
+    font-size: 24px;
+    font-weight: bold;
+}
+h6{
+	font-size: 18px;
+}
 /*リンク（全般）設定
 ---------------------------------------------------------------------------*/
 a {
-	color: #999;	/*リンクテキストの色*/
+	color: #696969;	/*リンクテキストの色*/
 	transition: 0.3s;	/*マウスオン時の移り変わるまでの時間設定。0.3秒。*/
 }
 a:hover {
-	color: #b4ae99;	/*マウスオン時の文字色*/
+	color: #999;	/*マウスオン時の文字色*/
 }
 
 /*コンテナー（ホームページを囲む一番外側のブロック）
@@ -59,6 +66,7 @@ header {
 #mainimg img {
 	border-radius: 10px;	/*角を丸くする指定。この１行を削除すれば角丸がなくなります。*/
 	margin-bottom: 40px;	/*下に空けるスペース*/
+	
 }
 
 /*メニュー
@@ -79,8 +87,8 @@ header {
 }
 /*マウスオン時の設定*/
 #menubar li a:hover {
-	color: #b4ae99;	/*文字色*/
-	border-bottom: 4px solid #b4ae99;	/*下線の幅、線種、色*/
+	color: #be8f68;	/*文字色*/
+	border-bottom: 4px solid #be8f68;	/*下線の幅、線種、色*/
 }
 
 /*コンテンツ（見出しバーや文字などが入っているブロック）
@@ -88,19 +96,21 @@ header {
 /*コンテンツのh2タグの設定*/
 #contents h2 {
 	clear: both;
+	margin-top: 20px;
 	margin-bottom: 20px;
 	color: #fff;		/*文字色*/
 	padding: 10px 20px;	/*上下、左右への余白*/
-	background: #b4ae99;	/*背景色*/
+	background: #be8f68;	/*背景色*/
 	border-radius: 10px;	/*角を丸くする指定。この１行を削除すれば角丸がなくなります。*/
 }
 /*コンテンツのh3タグの設定*/
 #contents h3 {
 	clear: both;
-	margin-bottom: 20px;
+	margin-top: 20px;
+	margin-bottom: 10px;
 	padding: 8px 20px;	/*上下、左右への余白*/
 	background: #fff;	/*背景色*/
-	border: 1px solid #999;	/*枠線の幅、線種、色*/
+	border: 1px solid #be8f68;	/*枠線の幅、線種、色*/
 	border-radius: 10px;	/*角を丸くする指定。この１行を削除すれば角丸がなくなります。*/
 }
 /*コンテンツのp(段落)タグ設定*/
@@ -124,12 +134,12 @@ header {
 /*各ブロックごとの設定*/
 .list {
 	overflow: hidden;
-	border-bottom: 1px solid #999;	/*下線の幅、線種、色*/
+	border-bottom: 1px solid #be8f68;	/*下線の幅、線種、色*/
 	padding: 20px;	/*ボックス内の余白*/
 }
 /*h4見出しの設定*/
 .list h4 {
-	color: #b4ae99;	/*文字色*/
+	color: #be8f68;	/*文字色*/
 }
 /*画像の設定*/
 .list img {
@@ -179,7 +189,7 @@ footer .pr {
 ---------------------------------------------------------------------------*/
 /*テーブル１行目に入った見出し部分（※caption）*/
 .ta1 caption {
-	border: 1px solid #999;	/*テーブルの枠線の幅、線種、色*/
+	border: 1px solid #be8f68;	/*テーブルの枠線の幅、線種、色*/
 	border-bottom: none;	/*下線だけ消す*/
 	text-align: left;		/*文字を左寄せ*/
 	background: #eee;		/*背景色*/
@@ -200,7 +210,7 @@ footer .pr {
 }
 .ta1, .ta1 td, .ta1 th {
 	word-break: break-all;
-	border: 1px solid #999;	/*テーブルの枠線の幅、線種、色*/
+	border: 1px solid #be8f68;	/*テーブルの枠線の幅、線種、色*/
 	padding: 10px;			/*テーブル内の余白*/
 }
 /*テーブルの左側ボックス*/
@@ -226,7 +236,7 @@ footer .pr {
 ---------------------------------------------------------------------------*/
 .look {background: #e5e5e5;padding: 5px 10px;border-radius: 4px;}
 .mb15,.mb1em {margin-bottom: 15px;}
-.color1 {color: #b4ae99;}
+.color1 {color: #be8f68;}
 .pr {font-size: 12px;}
 .wl {width: 96%;}
 .ws {width: 50%;}
