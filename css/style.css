@@ -23,7 +23,7 @@ img {border: none;max-width: 100%;height: auto;vertical-align: middle;}
 video{max-width: 100%;}
 img2 {border: none;}
 table {border-collapse:collapse;font-size: 100%;border-spacing: 0;}
-iframe {width: 100%;}
+/*iframe {width: 100%;}*/
 h5 {
     font-size: 24px;
     font-weight: bold;
