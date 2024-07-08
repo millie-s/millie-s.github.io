@@ -11,6 +11,8 @@
     <p>次のメッセージに対応しています。</p>
     <p>活動をやめたら/いつも応援しています/ぶりっこ嫌い/今日のテレビでの笑顔ぎこちなかったよ？/引退したら？/スキャンダル多すぎ/大好き</p>
     <p>返答は音声でされます</p>
+    <p>携帯では正常に動作しない可能性があります。推奨環境はPCのChromeでの利用となります。</p>
+    
     <select class="form-select" required aria-label="select example" id="selectLanguage" style="width: 30%;">
         <option value="ja-JP">日本語</option>
         <option value="en-US">English</option>
@@ -18,8 +20,6 @@
     </select>
     <button id="startButton">音声入力開始</button>
     <button id="stopButton">音声入力停止</button>
-    <label for="toggleSpeech">自動読み上げ</label>
-    <input type="checkbox" id="toggleSpeech" checked>
     <p id="recognizedText">認識されたテキスト: </p>
     <p id="receivedText">アイドルが受け取ったテキスト: </p>
     <p id="languageText">翻訳したテキスト: </p>
@@ -31,7 +31,6 @@
         const receivedTextElement = document.getElementById('receivedText');
         const selectLanguage = document.getElementById('selectLanguage');
         const languageTextElement = document.getElementById('languageText');
-        const toggleSpeech = document.getElementById('toggleSpeech');
 
         let recognition;
         if (!('webkitSpeechRecognition' in window)) {
@@ -60,9 +59,7 @@
                     const responseText = generateReply(finalTranscript.trim(), language);
                     receivedTextElement.textContent = 'アイドルが受け取ったメッセージ: ' + rmessage;
                     languageTextElement.textContent = '翻訳メッセージ: ' + responseText;
-                    if (toggleSpeech.checked) {
-                        speak(response, 'ja-JP');
-                    }
+                    speak(response, 'ja-JP');
                 }
             };
         }
@@ -124,12 +121,6 @@
         function speak(text, language) {
             const utterance = new SpeechSynthesisUtterance(text);
             utterance.lang = language;
-            utterance.onend = function(event) {
-                console.log('SpeechSynthesisUtterance.onend');
-            };
-            utterance.onerror = function(event) {
-                console.error('SpeechSynthesisUtterance.onerror');
-            };
             window.speechSynthesis.speak(utterance);
         }
     </script>
