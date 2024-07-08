@@ -18,6 +18,8 @@
     </select>
     <button id="startButton">音声入力開始</button>
     <button id="stopButton">音声入力停止</button>
+    <label for="toggleSpeech">自動読み上げ</label>
+    <input type="checkbox" id="toggleSpeech" checked>
     <p id="recognizedText">認識されたテキスト: </p>
     <p id="receivedText">アイドルが受け取ったテキスト: </p>
     <p id="languageText">翻訳したテキスト: </p>
@@ -29,6 +31,7 @@
         const receivedTextElement = document.getElementById('receivedText');
         const selectLanguage = document.getElementById('selectLanguage');
         const languageTextElement = document.getElementById('languageText');
+        const toggleSpeech = document.getElementById('toggleSpeech');
 
         let recognition;
         if (!('webkitSpeechRecognition' in window)) {
@@ -57,7 +60,9 @@
                     const responseText = generateReply(finalTranscript.trim(), language);
                     receivedTextElement.textContent = 'アイドルが受け取ったメッセージ: ' + rmessage;
                     languageTextElement.textContent = '翻訳メッセージ: ' + responseText;
-                    speak(response, 'ja-JP');
+                    if (toggleSpeech.checked) {
+                        speak(response, 'ja-JP');
+                    }
                 }
             };
         }
@@ -119,6 +124,12 @@
         function speak(text, language) {
             const utterance = new SpeechSynthesisUtterance(text);
             utterance.lang = language;
+            utterance.onend = function(event) {
+                console.log('SpeechSynthesisUtterance.onend');
+            };
+            utterance.onerror = function(event) {
+                console.error('SpeechSynthesisUtterance.onerror');
+            };
             window.speechSynthesis.speak(utterance);
         }
     </script>
